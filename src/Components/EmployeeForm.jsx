@@ -20,7 +20,7 @@ const EmployeeForm = () => {
     employeeServices
       .add(name, position, salary)
       .then((res) => {
-        alert("Succesfully added");
+        alert("Successfully added");
 
         // clear the form
         setName("");
@@ -29,7 +29,7 @@ const EmployeeForm = () => {
 
         // redirect to dashboard page
         setTimeout(() => {
-          navigate("/list");
+          navigate("/");
         }, 500);
       })
       .catch((error) => {
@@ -38,7 +38,7 @@ const EmployeeForm = () => {
   };
   return (
     <div>
-      <h2>{id ? "Edit Employee" : "Add Employee"}</h2>
+      <h2>Create Employee</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label>Name:</label>
@@ -73,7 +73,7 @@ const EmployeeForm = () => {
           <br />
           <br />
         </div>
-        <button type="submit">{id ? "Update" : "Add"}</button>
+        <button type="submit" className="btn btn-primary">Create</button>
       </form>
     </div>
   );
